@@ -21,6 +21,7 @@ import LoginPage from '../LoginPage/LoginPage';
 import RegisterPage from '../RegisterPage/RegisterPage';
 
 import './App.css';
+import ChatTest from '../ChatTest/ChatTest';
 
 function App() {
   const dispatch = useDispatch();
@@ -107,6 +108,7 @@ function App() {
             <h1>404</h1>
           </Route>
         </Switch>
+        <ChatTest />
         <Footer />
       </div>
     </Router>
