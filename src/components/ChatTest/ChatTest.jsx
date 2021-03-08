@@ -13,7 +13,8 @@ export default function ChatTest() {
   };
 
   useEffect(() => {
-    socket.on('connect', () => {
+    socket.on('connect', (socket) => {
+      const userId = fetchUserId(socket);
       socket.send(fullMessage);
       socket.emit(
         'saluations',
@@ -21,6 +22,7 @@ export default function ChatTest() {
         { mr: 'john' },
         Uint8Array.from([1, 2, 3, 4])
       );
+      console.log(userId);
     });
   }, []);
 
@@ -34,6 +36,7 @@ export default function ChatTest() {
 
   return (
     <div>
+      <div className="chat-window"></div>
       <form onSubmit={handleSubmit}>
         <input
           onChange={(event) => setMessage(event.target.value)}
