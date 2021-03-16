@@ -1,6 +1,5 @@
 import { useState, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import AddGear from "../AddGear/AddGear";
 import "../AddGearToSwap/AddGearToSwap.css";
 
 export default function AddGearToSwap({selectedSwap}) {

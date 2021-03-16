@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { useHistory } from "react-router-dom";
+import { useHistory, useParams } from "react-router-dom";
 import Modal from "react-modal";
 import "../SwapItems/SwapItems.css";
 import DetailsView from "../DetailsView/DetailsView";
@@ -39,6 +39,10 @@ export default function SwapItems() {
       dispatch({ type: "FAVORITE_ITEM", payload: [piece, selectedSwap] });
     }
   };
+
+
+    //grab id out of the url
+    const { id } = useParams();
 
   const gearClicked = (piece) => {
     dispatch({ type: "SELECTED_PIECE", payload: piece });
